@@ -62,3 +62,10 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 }
+
+sqldelight {
+    database(name = "TranslateDatabase") {
+        packageName = "com.example.translatorkmm.database"
+        sourceFolders = listOf("sqldelight")
+    }
+}
