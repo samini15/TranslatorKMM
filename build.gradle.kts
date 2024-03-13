@@ -14,10 +14,10 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath(Dependencies.kotlinGradlePlugin)
-        classpath(Dependencies.androidBuildTools)
-        classpath(Dependencies.sqlDelightGradlePlugin)
-        classpath(Dependencies.hiltGradlePlugin)
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.20")
+        classpath("com.android.tools.build:gradle:${libs.versions.agp}")
+        classpath("com.squareup.sqldelight:gradle-plugin:1.5.4")
+        classpath("com.google.dagger:hilt-android-gradle-plugin:2.51")
     }
 }
 

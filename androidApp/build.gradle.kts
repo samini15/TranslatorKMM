@@ -46,6 +46,8 @@ dependencies {
     implementation(libs.androidx.activity.compose)
     debugImplementation(libs.compose.ui.tooling)
 
+    implementation(libs.ktor.android)
+
     implementation(libs.compose.navigation)
 
     implementation(libs.compose.coil)

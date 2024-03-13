@@ -50,7 +50,7 @@ kotlin {
         }
     }
 }
-
+task("testClasses")
 android {
     namespace = "com.example.translatorkmm"
     compileSdk = 34
