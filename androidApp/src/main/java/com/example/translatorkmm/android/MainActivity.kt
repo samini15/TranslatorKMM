@@ -18,6 +18,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.translatorkmm.Greeting
 import com.example.translatorkmm.android.core.presentation.navigation.Routes
+import com.example.translatorkmm.android.core.presentation.utils.rememberScreenInfo
 import com.example.translatorkmm.android.core.theme.TranslatorKMMTheme
 import com.example.translatorkmm.android.translate.presentation.AndroidTranslateViewModel
 import com.example.translatorkmm.android.translate.presentation.TranslateScreen
@@ -55,12 +56,13 @@ fun DefaultPreview() {
 
 @Composable
 fun TranslateRoot() {
+    val screenInfo = rememberScreenInfo()
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = Routes.TRANSLATE) {
         composable(route = Routes.TRANSLATE) {
             val viewModel = hiltViewModel<AndroidTranslateViewModel>()
             val state by viewModel.state.collectAsState()
-            TranslateScreen(state = state, onEvent = viewModel::onEvent)
+            TranslateScreen(state = state, onEvent = viewModel::onEvent, screenInfo = screenInfo)
         }
     }
 }
