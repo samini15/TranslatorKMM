@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="swap_languages">swap languages</string>
+    <string name="translate_text_field_placeholder">Enter a text to translate</string>
+    <string name="translate">Translate</string>
+    <string name="copy">Copy</string>
+    <string name="close">Close</string>
+    <string name="speaker">Speaker</string>
+    <string name="copied_to_clipboard">Text copied to clipboard</string>
 </resources>
