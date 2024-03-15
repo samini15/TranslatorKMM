@@ -7,4 +7,10 @@
     <string name="close">Close</string>
     <string name="speaker">Speaker</string>
     <string name="copied_to_clipboard">Text copied to clipboard</string>
+    <string name="history">History</string>
+    <string name="error_service_unavailable">Oops! An error occured. Please try later.</string>
+    <string name="client_error">Oops! An error occured. Please try again later.</string>
+    <string name="server_error">This service is unavailable. Please contact admin or try later.</string>
+    <string name="unknown_error">An unknown error happened</string>
+    <string name="record_audio">Record audio</string>
 </resources>

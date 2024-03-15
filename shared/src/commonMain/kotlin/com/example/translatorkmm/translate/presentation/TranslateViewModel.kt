@@ -19,10 +19,9 @@ import kotlinx.coroutines.launch
 
 class TranslateViewModel(
     private val translateUseCase: TranslateUseCase,
-    private val historyDataSource: HistoryDataSource,
-    private val coroutineScope: CoroutineScope?
+    historyDataSource: HistoryDataSource,
+    coroutineScope: CoroutineScope?
 ) {
-
     private val viewModelScope = coroutineScope ?: CoroutineScope(Dispatchers.Main)
 
     private val _state = MutableStateFlow(TranslateState())
