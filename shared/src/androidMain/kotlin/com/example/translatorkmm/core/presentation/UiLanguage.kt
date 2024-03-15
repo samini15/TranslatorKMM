@@ -10,7 +10,7 @@ actual class UiLanguage(
     @DrawableRes val drawableRes: Int,
     actual val language: Language
 ) {
-    fun toLocale(): Locale? {
+    fun toLocale(): Locale {
         return when (language) {
             Language.ENGLISH -> Locale.ENGLISH
             Language.FRENCH -> Locale.FRENCH
@@ -18,7 +18,7 @@ actual class UiLanguage(
             Language.ITALIAN -> Locale.ITALIAN
             Language.KOREAN -> Locale.KOREAN
             Language.JAPANESE -> Locale.JAPANESE
-            else -> null
+            else -> Locale.ENGLISH
         }
     }
     actual companion object {

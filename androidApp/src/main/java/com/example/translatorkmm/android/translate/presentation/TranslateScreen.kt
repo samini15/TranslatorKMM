@@ -1,5 +1,6 @@
 package com.example.translatorkmm.android.translate.presentation
 
+import android.speech.tts.TextToSpeech
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -22,6 +23,7 @@ import com.example.translatorkmm.android.core.theme.LocalSpacing
 import com.example.translatorkmm.android.translate.presentation.components.LanguageDropDownMenu
 import com.example.translatorkmm.android.translate.presentation.components.SwapLanguagesButton
 import com.example.translatorkmm.android.translate.presentation.components.TranslateTextField
+import com.example.translatorkmm.android.translate.presentation.components.rememberTextToSpeech
 import com.example.translatorkmm.translate.presentation.TranslateEvent
 import com.example.translatorkmm.translate.presentation.TranslateState
 
@@ -111,6 +113,7 @@ fun TranslateScreen(
             item {
                 val clipBoardManager = LocalClipboardManager.current
                 val keyboardController = LocalSoftwareKeyboardController.current
+                val textToSpeech = rememberTextToSpeech()
                 TranslateTextField(
                     modifier = Modifier.fillMaxWidth(),
                     fromLanguage = state.fromLanguage,
@@ -128,7 +131,10 @@ fun TranslateScreen(
                     onCloseClick = {
                         onEvent(TranslateEvent.CloseTranslation)
                     },
-                    onSpeakerClick = { /*TODO*/ },
+                    onSpeakerClick = {
+                        textToSpeech.language = state.toLanguage.toLocale()
+                        textToSpeech.speak(state.toText, TextToSpeech.QUEUE_FLUSH, null, null)
+                    },
                     onEditClick = {
                         onEvent(TranslateEvent.EditTranslation)
                     },
