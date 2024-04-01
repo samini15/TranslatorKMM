@@ -7,13 +7,20 @@
 //
 
 import SwiftUI
+import shared
 
 struct LanguageDisplay: View {
+    var language: UiLanguage
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            SmallLanguageIcon(language: language)
+                .padding(.trailing, 5)
+            Text(language.language.langName)
+                .foregroundColor(.lightBlue)
+        }
     }
 }
 
 #Preview {
-    LanguageDisplay()
+    LanguageDisplay(language: UiLanguage(language: .persian, imageName: "persian"))
 }

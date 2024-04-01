@@ -42,10 +42,23 @@ struct TranslateView: View {
                     }
                 }
                 .listRowSeparator(.hidden)
-                //.listRowBackground(Color.background)
+                .listRowBackground(Color.surface)
+                
+                TranslateTextField(
+                    fromText: Binding(get: { viewModel.state.fromText }, set: { value in
+                        viewModel.onEvent(event: TranslateEvent.ChangeTranslationText(text: value))
+                    }),
+                    toText: viewModel.state.toText,
+                    isTranslating: viewModel.state.isTranslating,
+                    fromLanguage: viewModel.state.fromLanguage,
+                    toLanguage: viewModel.state.toLanguage) { translateEvent in
+                        viewModel.onEvent(event: translateEvent)
+                    }
+                
+                
             }
-            //.listStyle(.plain)
-            //.buttonStyle(.plain)
+            .listStyle(.plain)
+            .buttonStyle(.plain)
         }
         .onAppear {
             viewModel.startObserving()
