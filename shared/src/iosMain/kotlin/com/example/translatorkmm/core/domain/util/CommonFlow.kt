@@ -2,6 +2,9 @@ package com.example.translatorkmm.core.domain.util
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.DelicateCoroutinesApi
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 
@@ -19,4 +22,14 @@ actual open class CommonFlow<T> actual constructor(
         }
         return DisposableHandle { job.cancel() }
     }
+
+    @OptIn(DelicateCoroutinesApi::class)
+    fun subscribe(
+        onCollect: (T) -> Unit
+    ): DisposableHandle =
+        subscribe(
+            coroutineScope = GlobalScope,
+            dispatcher = Dispatchers.Main,
+            onCollect = onCollect
+        )
 }

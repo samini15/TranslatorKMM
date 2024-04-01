@@ -36,9 +36,21 @@ extension TranslateView {
             self.viewModel = TranslateViewModel(translateUseCase: translateUseCase, historyDataSource: historyDataSource, coroutineScope: nil)
         }
         
+        func onEvent(event: TranslateEvent) {
+            self.viewModel.onEvent(event: event)
+        }
+        
         /// Collect emissions from the flow and update the state
         func startObserving() {
-            handle = viewModel.state.colle
+            handle = viewModel.state.subscribe(onCollect: { state in
+                if let state {
+                    self.state = state
+                }
+            })
+        }
+        
+        func dispose() {
+            handle?.dispose()
         }
     }
 }
