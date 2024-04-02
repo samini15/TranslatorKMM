@@ -41,7 +41,7 @@ struct TranslateTextField: View {
 }
 
 #Preview {
-    TranslateTextField(fromText: Binding(get: { "Text" }, set: { value in }), toText: "Translated text", isTranslating: false, fromLanguage: UiLanguage(language: .persian, imageName: "persian"), toLanguage: UiLanguage(language: .french, imageName: "french"), onTranslateEvent: { event in })
+    TranslateTextField(fromText: Binding(get: { "Text" }, set: { value in }), toText: "Translated text", isTranslating: true, fromLanguage: UiLanguage(language: .persian, imageName: "persian"), toLanguage: UiLanguage(language: .french, imageName: "french"), onTranslateEvent: { event in })
 }
 
 private extension TranslateTextField {
@@ -63,8 +63,12 @@ private extension TranslateTextField {
                 }
                 .onAppear {
                     // Transparent color for textEditor background
+                    /// iOS 15 and below
+                    /// https://stackoverflow.com/questions/62848276/change-background-color-of-texteditor-in-swiftui
                     UITextView.appearance().backgroundColor = .clear
                 }
+                /// iOS 16 and above
+                .scrollContentBackground(.hidden)
         }
     }
     
