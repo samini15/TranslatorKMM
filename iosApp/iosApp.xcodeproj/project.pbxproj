@@ -25,6 +25,7 @@
 		E4287C952BB1EE0800C2FADF /* TranslateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4287C942BB1EE0800C2FADF /* TranslateView.swift */; };
 		E42B3CC62BA6F89F00796706 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42B3CC52BA6F89F00796706 /* Colors.swift */; };
 		E443948C2BC0B18200C0644D /* MicrophonePowerObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E443948B2BC0B18200C0644D /* MicrophonePowerObserver.swift */; };
+		E4735C602BC6D30900A5829F /* IOSVoiceToTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4735C5F2BC6D30900A5829F /* IOSVoiceToTextViewModel.swift */; };
 		E4BC97612BC44BDC00667978 /* IOSVoiceToTextParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BC97602BC44BDC00667978 /* IOSVoiceToTextParser.swift */; };
 		E4DB77252BA9F13F007F2D3F /* LanguageDropDownItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB77242BA9F13F007F2D3F /* LanguageDropDownItem.swift */; };
 /* End PBXBuildFile section */
@@ -52,6 +53,7 @@
 		E4287C942BB1EE0800C2FADF /* TranslateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateView.swift; sourceTree = "<group>"; };
 		E42B3CC52BA6F89F00796706 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		E443948B2BC0B18200C0644D /* MicrophonePowerObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrophonePowerObserver.swift; sourceTree = "<group>"; };
+		E4735C5F2BC6D30900A5829F /* IOSVoiceToTextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSVoiceToTextViewModel.swift; sourceTree = "<group>"; };
 		E4BC97602BC44BDC00667978 /* IOSVoiceToTextParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSVoiceToTextParser.swift; sourceTree = "<group>"; };
 		E4DB77242BA9F13F007F2D3F /* LanguageDropDownItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageDropDownItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,6 +148,7 @@
 		E44394892BC0B14100C0644D /* voice_to_text */ = {
 			isa = PBXGroup;
 			children = (
+				E4735C5E2BC6D2DA00A5829F /* presentation */,
 				E443948A2BC0B16300C0644D /* data */,
 			);
 			path = voice_to_text;
@@ -158,6 +161,14 @@
 				E4BC97602BC44BDC00667978 /* IOSVoiceToTextParser.swift */,
 			);
 			path = data;
+			sourceTree = "<group>";
+		};
+		E4735C5E2BC6D2DA00A5829F /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				E4735C5F2BC6D30900A5829F /* IOSVoiceToTextViewModel.swift */,
+			);
+			path = presentation;
 			sourceTree = "<group>";
 		};
 		E4DB77212BA9F081007F2D3F /* translate */ = {
@@ -327,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E40B35192BBB5D34009E2A24 /* ProgressButton.swift in Sources */,
+				E4735C602BC6D30900A5829F /* IOSVoiceToTextViewModel.swift in Sources */,
 				E443948C2BC0B18200C0644D /* MicrophonePowerObserver.swift in Sources */,
 				E4287C8D2BB1E7C900C2FADF /* LanguageDropDownMenu.swift in Sources */,
 				E40B35152BBB5156009E2A24 /* GradientSurface.swift in Sources */,
