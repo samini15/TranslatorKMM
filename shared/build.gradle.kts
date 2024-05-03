@@ -39,6 +39,9 @@ kotlin {
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
+            implementation(libs.test.turbine)
+            implementation(libs.test.assertK)
+
         }
         androidMain.dependencies {
             implementation(libs.ktor.android)

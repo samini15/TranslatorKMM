@@ -6,7 +6,7 @@ import com.example.translatorkmm.core.domain.language.Language
 import java.lang.IllegalArgumentException
 import java.util.Locale
 
-actual class UiLanguage(
+actual data class UiLanguage(
     @DrawableRes val drawableRes: Int,
     actual val language: Language
 ) {
