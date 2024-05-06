@@ -3,15 +3,15 @@ import shared
 
 struct ContentView: View {
 
-    private let appModule = AppModule()
+    let appModule: AppModule
 
 	var body: some View {
-        TranslateView(historyDataSource: appModule.historyDataSource, translateUseCase: appModule.translateUseCase)
+        TranslateView(historyDataSource: appModule.historyDataSource, translateUseCase: appModule.translateUseCase, parser: appModule.voiceToTextParser)
 	}
 }
 
-struct ContentView_Previews: PreviewProvider {
+/*struct ContentView_Previews: PreviewProvider {
 	static var previews: some View {
 		ContentView()
 	}
-}
+}*/

@@ -8,18 +8,29 @@ import com.example.translatorkmm.translate.data.translate.KtorTranslateClient
 import com.example.translatorkmm.translate.domain.history.HistoryDataSource
 import com.example.translatorkmm.translate.domain.translate.TranslateClient
 import com.example.translatorkmm.translate.domain.translate.TranslateUseCase
+import com.example.translatorkmm.voice_to_text.domain.VoiceToTextParser
 
-class AppModule {
+interface AppModule {
+    val historyDataSource: HistoryDataSource
+    val translateClient: TranslateClient
+    val translateUseCase: TranslateUseCase
+    val voiceToTextParser: VoiceToTextParser
+}
+class AppModuleImpl(
+    parser: VoiceToTextParser
+): AppModule {
 
-    val historyDataSource: HistoryDataSource by lazy {
+    override val historyDataSource: HistoryDataSource by lazy {
         SQLDelightHistoryDataSource(TranslateDatabase(driver = DatabaseDriverFactory().create()))
     }
 
-    private val translateClient: TranslateClient by lazy {
+    override val translateClient: TranslateClient by lazy {
         KtorTranslateClient(httpClient = HttpClientFactory().create())
     }
 
-    val translateUseCase: TranslateUseCase by lazy {
+    override val translateUseCase: TranslateUseCase by lazy {
         TranslateUseCase(client = translateClient, historyDataSource = historyDataSource)
     }
+
+    override val voiceToTextParser = parser
 }
