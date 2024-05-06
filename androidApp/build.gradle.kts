@@ -14,6 +14,8 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+
+        testInstrumentationRunner = "com.example.translatorkmm.TestHiltRunner"
     }
     buildFeatures {
         compose = true
@@ -58,4 +60,15 @@ dependencies {
     kapt(libs.hilt.androidCompiler)
     kapt(libs.hilt.compiler)
     implementation(libs.hilt.navigationCompose)
+
+    kaptAndroidTest(libs.hilt.androidCompiler)
+
+    androidTestImplementation(libs.hilt.testing)
+    androidTestImplementation(libs.compose.testing)
+    androidTestImplementation(libs.testRunner)
+    androidTestImplementation(libs.test.jUnit)
+    androidTestImplementation(libs.test.rules)
+
+    debugImplementation(libs.compose.testManifest)
+
 }

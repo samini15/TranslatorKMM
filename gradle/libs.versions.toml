@@ -17,7 +17,8 @@ sqlDelight = "1.5.4"
 turbine = "0.7.0"
 jUnit = "4.13.2"
 assertK = "0.25"
-testRunner = "1.5.2"
+testRunner = "1.5.0"
+testRules = "1.5.0"
 
 
 [libraries]
@@ -58,10 +59,11 @@ sqlDelight-coroutinesExtensions = { module = "com.squareup.sqldelight:coroutines
 test-turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
 test-jUnit = { module = "junit:junit", version.ref = "jUnit"}
 test-assertK = { module = "com.willowtreeapps.assertk:assertk", version.ref = "assertK"}
+test-rules = { module = "androidx.test:rules", version.ref = "testRules" }
 testRunner = { module = "androidx.test:runner", version.ref = "testRunner"}
-composeTesting = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "compose"}
-composeTestManifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "compose"}
-hiltTesting = { module = "com.google.dagger:hilt-android-testing", version.ref = "hilt"}
+compose-testing = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "compose"}
+compose-testManifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "compose"}
+hilt-testing = { module = "com.google.dagger:hilt-android-testing", version.ref = "hilt"}
 
 
 [bundles]
@@ -71,7 +73,9 @@ compose = [
     "compose-ui-tooling-preview",
     "compose-material",
     "compose-material3",
-    "compose-icons-extended"
+    "compose-icons-extended",
+    "compose-testing",
+    "compose-testManifest"
 ]
 
 hilt = [
